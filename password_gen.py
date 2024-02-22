@@ -3,21 +3,39 @@ import random
 
 
 def get_minimum_length() -> int:
+    """Prompt the user to input the minimum length of a password.
+    Continuously prompts the user until a valid integer value is provided
+    as the minimum length of the password.
+    Returns:
+        int: The minimum length of the password as provided by the user."""
+    
     while True:
-        length = input("what is the length of the password:\n")
-        if not length.isdigit():
+        try:
+            length = abs(int(input("what is the length of the password:\n")))
+            return length
+        except:
             print("Please enter a digit to proceed")
-            continue
-        return int(length)  
 
 
 def numbers_inpassword() -> bool:
+    """Prompt the user to specify whether the password should include numbers.
+    Returns:
+        bool: True if the user wants numbers to be included in the password,
+              False otherwise."""
+    
     nums = input("should the password include numbers. yes/no\n").lower() == "yes"
     return nums
 
 
 def special_inpassword() -> bool:
-    special = input("should the password include special characters. yes/no\n").lower() == "yes"
+    """Prompt the user to specify whether the password should include special 
+    characters.
+    Returns:
+        bool: True if the user wants special characters to be included in the 
+        password, False otherwise."""
+    
+    special = input("should the password include special characters.\
+                     yes/no\n").lower() == "yes"
     return special
 
 

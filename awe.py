@@ -11,9 +11,11 @@ import string
 # str += string.punctuation
 
 # print(str)
-def numbers_inpassword() -> bool:
-    nums = input("should the password include numbers. yes/no\n").lower() == "yes"
-    print(nums)
-    return nums
+# def numbers_inpassword() -> bool:
+#     nums = input("should the password include numbers. yes/no\n").lower() == "yes"
+#     print(nums)
+#     return nums
 
-numbers_inpassword()
+# numbers_inpassword()
+
+print(abs("12"))
