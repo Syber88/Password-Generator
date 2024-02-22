@@ -16,7 +16,7 @@ def numbers_inpassword() -> bool:
     return special
 
 
-def generate(min_length, numbers=True, special_characters=True) -> str:
+def generate(min_length=5, numbers=True, special_characters=True) -> str:
     str = ""
     str += string.ascii_letters
     str += string.digits
@@ -24,6 +24,10 @@ def generate(min_length, numbers=True, special_characters=True) -> str:
     password = ""
 
     while len(password) < min_length:
+        password += random.choice(str)
+    return password
+
+
 
 
         
