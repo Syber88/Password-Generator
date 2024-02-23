@@ -11,11 +11,10 @@ def get_minimum_length() -> int:
     
     while True:
         try:
-            length = abs(int(input("what is the length of the password:\n")))
+            length = abs(int(input("what is the length of the password: ")))
             return length
-        except:
+        except ValueError:
             print("Please enter a digit to proceed")
-
 
 def numbers_inpassword() -> bool:
     """Prompt the user to specify whether the password should include numbers.
@@ -23,8 +22,9 @@ def numbers_inpassword() -> bool:
         bool: True if the user wants numbers to be included in the password,
               False otherwise."""
     
-    nums = input("should the password include numbers. yes/no\n").lower() == "yes"
-    return nums
+    nums = input("should the password include numbers. yes/no\n").lower()
+    
+    return nums == "yes" or nums == "y"
 
 
 def special_inpassword() -> bool:
@@ -35,8 +35,8 @@ def special_inpassword() -> bool:
         password, False otherwise."""
     
     special = input("should the password include special characters.\
-                     yes/no\n").lower() == "yes"
-    return special
+                     yes/no\n").lower() 
+    return special == "yes" or special == "y"
 
 
 def generate(min_length=8, numbers=True, special_characters=True) -> str:
