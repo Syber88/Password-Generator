@@ -22,8 +22,9 @@ def numbers_inpassword() -> bool:
         bool: True if the user wants numbers to be included in the password,
               False otherwise."""
     
-    nums = input("should the password include numbers. yes/no\n").lower() == "yes"
-    return nums
+    nums = input("should the password include numbers. yes/no\n").lower()
+    
+    return nums == "yes" or nums == "y"
 
 
 def special_inpassword() -> bool:
@@ -34,8 +35,8 @@ def special_inpassword() -> bool:
         password, False otherwise."""
     
     special = input("should the password include special characters.\
-                     yes/no\n").lower() == "yes"
-    return special
+                     yes/no\n").lower() 
+    return special == "yes" or special == "y"
 
 
 def generate(min_length=8, numbers=True, special_characters=True) -> str:
