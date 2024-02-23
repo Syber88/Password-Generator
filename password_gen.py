@@ -38,27 +38,34 @@ def special_inpassword() -> bool:
     return special == "yes" or special == "y"
 
 
-def generate(min_length=8, numbers=True, special_characters=True) -> str:
-    str = ""
-    str += string.ascii_letters
+def string_selection(numbers: bool=True, special_characters: bool=True) -> str:
+    str_ = ""
+    str_ += string.ascii_letters
     if numbers:
-        str += string.digits
+        str_ += string.digits
     if special_characters:
-        str += string.punctuation
+        str_ += string.punctuation
+    return str_
+
+def check_valid(numbers, special_characters, password) -> bool:
+    # string_select = string_selection(numbers, special_characters)
+    valid = False
+    # candidate = random.choice(string_select)
+    if numbers and any(digit.isdigit for digit in password):
+        valid = True
+    if special_characters and any(digit in string.punctuation for digit in password):
+        valid = True
+
+
+def generate(min_length: int, numbers: bool, special_characters: bool) -> str:
+    string_select = string_selection(numbers, special_characters)
     password = ""
-
-
-
     valid = False
     while len(password) < min_length:
-        candidate = random.choice(str)
-        if numbers and candidate.isdigit():
-            valid = True
-        if special_characters and candidate in string.punctuation:
-            valid = True
+
 
         password += candidate
-        
+
     if valid:
         return password
 
