@@ -11,11 +11,10 @@ def get_minimum_length() -> int:
     
     while True:
         try:
-            length = abs(int(input("what is the length of the password:\n")))
+            length = abs(int(input("what is the length of the password: ")))
             return length
-        except:
+        except ValueError:
             print("Please enter a digit to proceed")
-
 
 def numbers_inpassword() -> bool:
     """Prompt the user to specify whether the password should include numbers.
