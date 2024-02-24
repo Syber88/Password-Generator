@@ -39,6 +39,20 @@ def special_inpassword() -> bool:
 
 
 def string_selection(numbers: bool=True, special_characters: bool=True) -> str:
+    """
+    Generate a string based on specified options.
+
+    Args:
+        numbers (bool, optional): Include digits in the generated string.
+        Defaults to True.
+        special_characters (bool, optional): Include special characters in the 
+        generated string. Defaults to True.
+
+    Returns:
+        str: The generated string containing letters, and optionally digits and 
+        special characters.
+    """
+
     str_ = ""
     str_ += string.ascii_letters
     if numbers:
@@ -48,6 +62,20 @@ def string_selection(numbers: bool=True, special_characters: bool=True) -> str:
     return str_
 
 def check_valid(numbers, special_characters, password) -> bool:
+    """
+    Generate a string based on specified options.
+
+    Args:
+        numbers (bool, optional): Include digits in the generated string. 
+        Defaults to True.
+        special_characters (bool, optional): Include special characters in the 
+        generated string. Defaults to True.
+
+    Returns:
+        str: The generated string containing letters, and optionally digits and 
+        special characters.
+    """
+
     numbers_check = False
     special_chars_check = False
 
@@ -61,6 +89,18 @@ def check_valid(numbers, special_characters, password) -> bool:
 
 
 def generate(min_length: int, numbers: bool, special_characters: bool) -> str:
+    """
+    Generate a random password based on specified criteria.
+
+    Args:
+        min_length (int): The minimum length of the password.
+        numbers (bool): Whether the password must contain numbers.
+        special_characters (bool): Whether the password must contain special characters.
+
+    Returns:
+        str: A randomly generated password meeting the specified criteria.
+    """
+    
     string_select = string_selection(numbers, special_characters)
     password = ""
 
