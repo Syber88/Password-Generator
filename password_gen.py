@@ -48,16 +48,14 @@ def string_selection(numbers: bool=True, special_characters: bool=True) -> str:
     return str_
 
 def check_valid(numbers, special_characters, password) -> bool:
-    # string_select = string_selection(numbers, special_characters)
     numbers_check = False
     special_chars_check = False
-    # candidate = random.choice(string_select)
+
     if any(digit.isdigit() for digit in password):
         numbers_check = True
     if any(digit in string.punctuation for digit in password):
         special_chars_check = True
     if numbers_check == numbers and special_chars_check == special_characters:
-        print("ishaye khona")
         return True
 
 
