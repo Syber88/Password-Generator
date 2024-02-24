@@ -16,6 +16,7 @@ def get_minimum_length() -> int:
         except ValueError:
             print("Please enter a digit to proceed")
 
+
 def numbers_inpassword() -> bool:
     """Prompt the user to specify whether the password should include numbers.
     Returns:
@@ -61,6 +62,7 @@ def string_selection(numbers: bool=True, special_characters: bool=True) -> str:
         str_ += string.punctuation
     return str_
 
+
 def check_valid(numbers, special_characters, password) -> bool:
     """
     Generate a string based on specified options.
@@ -87,7 +89,6 @@ def check_valid(numbers, special_characters, password) -> bool:
         return True
 
 
-
 def generate(min_length: int, numbers: bool, special_characters: bool) -> str:
     """
     Generate a random password based on specified criteria.
@@ -100,7 +101,7 @@ def generate(min_length: int, numbers: bool, special_characters: bool) -> str:
     Returns:
         str: A randomly generated password meeting the specified criteria.
     """
-    
+
     string_select = string_selection(numbers, special_characters)
     password = ""
 
