@@ -118,7 +118,7 @@ def generate(min_length: int, numbers: bool, special_characters: bool) -> str:
 
 if __name__ == "__main__":
     pass_length = get_minimum_length()
-    include_numbers = numbers_inpassword(
+    include_numbers = numbers_inpassword()
     include_special = special_inpassword()
     print(generate(pass_length, include_numbers, include_special))
 
